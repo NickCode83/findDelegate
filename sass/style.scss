@@ -1,12 +1,14 @@
 @import "compass/reset";
 @import "compass/css3";
 @import "compass/utilities/general/clearfix";
+@import "iconfont";
 
 $bg-color: #efefef;
 $text-color: #4f4f4f;
 $secondy-text-color: #D9DADA;
 $highlight-text-color: white;
 $button-color: #6cdcac;
+$border-color:gray;
 
 body{
   font-family:'Open Sans',sans-serif;
@@ -114,4 +116,87 @@ body{
     @include clearfix;
   }
 
+}
+
+.how-it-works {
+
+  h2{
+    font-size: 2em;
+    text-transform: uppercase;
+    padding:1em 0;
+
+    &:after{
+      display: block;
+      content: '';
+      background-color: $border-color;
+      width: 2em;
+      height:.1em;
+      margin:.4em auto;
+    }
+  }
+  li {
+
+    float:left;
+    width:33.33%;
+    position: relative;
+
+    &:before {
+      display: block;
+      content: '';
+      background: $border-color;
+      width: 100%;
+      height: 1px;
+      position: absolute;
+      top:3.5em;
+      left:45%;
+      margin:0 2em;
+      z-index: -10;
+    }
+
+    &:last-child:before {
+      display: none;
+    }
+  }
+  .number {
+
+    font-size:2em;
+    color:$border-color;
+    border:1px solid $border-color;
+    width: 1em;
+    height: 1em;
+    display: block;
+    margin:1em auto 2em auto;
+    padding:.4em;
+    @include border-radius(100%);
+    background-color: $bg-color;
+  }
+  i{
+
+    font-size: 3.6em;
+  }
+  .icon-star{
+
+    color: #ECA95A;
+  }
+
+  .icon-pencil {
+
+    color: #AC9CD2;
+  }
+
+  .icon-users {
+
+    color: #4D99CB;
+  }
+
+  h3{
+    font-size: 2em;
+    font-weight: bold;
+    padding:1em 5em;
+  }
+
+  p{
+    color:$border-color;
+    padding:2em;
+  }
 }
